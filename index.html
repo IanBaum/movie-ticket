@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <title>Movie Tickets</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h2>Available Movies:</h2>
+            <select class="selectpicker" id="movieTitles">
+              <option selected disabled>Choose a movie</option>
+              <!-- <option>Serenity</option>
+              <option>Jurrasic Park</option>
+              <option>Terminator</option>
+              <option>Wall-e</option> -->
+            </select>
+        </div>
+        <div class="col-sm-6" id="movieTimes">
+          <h2>Available Times:</h2>
+          <h3 id="selectedMovie"></h3>
+          <form id="buyTicket">
+            <select id="times">
+              <option selected disabled>Choose a time</option>
+            </select>
+            <div class="form-group">
+              <label for ="userAge">Enter your age</label>
+              <input type="number" class="form-control" id="userAge">
+            </div>
+            <button type="submit" class="btn btn-success">Buy your ticket!</button>
+          </form>
+        </div>
+      </div>
+      <div class="row ticketContainer">
+        <div class="col-sm-6 col-sm-push-3" id="ticketDisplay">
+          <div class="jumbotron">
+            <h2 id="outputName"><h2>
+            <h3 id="outputPrice"></h3>
+            <h3 id="outputTime"></h3>
+            <h3 id="theatre"></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

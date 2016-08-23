@@ -1,0 +1,13 @@
+#movieTimes, #ticketDisplay{
+  display:none;
+}
+#ticketDisplay {
+  text-align: center;
+  font-family: monospace;
+}
+.jumbotron {
+  background-color: #f2f2f2;
+  margin: 20px;
+}
+.ticketContainer {
+}
