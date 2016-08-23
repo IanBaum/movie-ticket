@@ -11,3 +11,11 @@
 }
 .ticketContainer {
 }
+body{
+  background-repeat: no-repeat;
+}
+img {
+  width:100%;
+  margin-top:15px;
+
+}

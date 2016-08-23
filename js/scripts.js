@@ -31,11 +31,6 @@ for(i=0;i<availableMovies.length;i++){
   movies.push(new Movie(availableMovies[i],movieDurations[i],movieFirstRelease[i]));
 }
 
-// movies.push(new Movie("Serenity", 119,false));
-// movies.push(new Movie("Jurassic World", 125,true));
-// movies.push(new Movie("Terminator", 108,false));
-// movies.push(new Movie("Wall-e", 104,false));
-
 function minutesToHours(minutes){
   var formattedMinutes;
   if(minutes%60 === 0){
@@ -85,6 +80,8 @@ $(document).ready(function(){
     movie.availableTimes.forEach(function(time, index){
       $("select#times").append("<option>" + time + "</option>");
     })
+
+    $('#poster').html("<img src='img/" + movie.movieTitle + ".jpg'>")
     $("#movieTimes").show();
   })
 
