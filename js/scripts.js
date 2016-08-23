@@ -1,4 +1,7 @@
 var movies = [];
+var availableMovies = ["Serenity","Jurassic World","Terminator","Wall-e","Spirited Away"]
+var movieDurations = [119,125,108,104,125]
+var movieFirstRelease = [false,true,false,false,false]
 
 function Ticket(movie, inputTime, inputAge){
   this.movie = movie;
@@ -24,10 +27,14 @@ function Movie(title,duration,release){
   this.duration = duration;
 }
 
-movies.push(new Movie("Serenity", 119,false));
-movies.push(new Movie("Jurassic World", 125,true));
-movies.push(new Movie("Terminator", 108,false));
-movies.push(new Movie("Wall-e", 104,false));
+for(i=0;i<availableMovies.length;i++){
+  movies.push(new Movie(availableMovies[i],movieDurations[i],movieFirstRelease[i]));
+}
+
+// movies.push(new Movie("Serenity", 119,false));
+// movies.push(new Movie("Jurassic World", 125,true));
+// movies.push(new Movie("Terminator", 108,false));
+// movies.push(new Movie("Wall-e", 104,false));
 
 function minutesToHours(minutes){
   var formattedMinutes;
