@@ -1,5 +1,3 @@
-var movieTitlesList = ["Serenity", "Jurassic Park", "Terminator", "Wall-e"];
-var timesList = ["7:00","9:00","11:00"];
 var movies = [];
 
 function Ticket(movie, inputTime, inputAge){
@@ -19,21 +17,36 @@ function Ticket(movie, inputTime, inputAge){
   this.discount = discountType;
 }
 
-function Movie(title){
+function Movie(title,duration,release){
   this.movieTitle = title;
   this.availableTimes = [];
-  this.firstRelease = false;
+  this.firstRelease = release;
+  this.duration = duration;
 }
 
-movieTitlesList.forEach(function(movieTitle){
-  var newMovie = new Movie(movieTitle);
-  timesList.forEach(function(time){
-    newMovie.availableTimes.push(time);
-  })
-  if(movieTitle === "Jurassic Park"){
-    newMovie.firstRelease = true;
+movies.push(new Movie("Serenity", 119,false));
+movies.push(new Movie("Jurassic World", 125,true));
+movies.push(new Movie("Terminator", 108,false));
+movies.push(new Movie("Wall-e", 104,false));
+
+function minutesToHours(minutes){
+  var formattedMinutes;
+  if(minutes%60 === 0){
+    formattedMinutes = '00'
+  } else if(minutes%60 < 10){
+    formattedMinutes = '0' + minutes%60;
+  } else {
+    formattedMinutes = minutes%60;
   }
-  movies.push(newMovie);
+  return Math.floor(minutes/60) + ":" + formattedMinutes;
+}
+
+movies.forEach(function(movie){
+  var time = 420;
+  while(time <= 1140){
+    movie.availableTimes.push(minutesToHours(time));
+    time += movie.duration + 15;
+  }
 })
 
 Ticket.prototype.getPrice = function(){
